@@ -2,17 +2,17 @@ language: python
 python:
   - "2.6"
   - "2.7"
-env:
-  global:
-    - secure: "jE3ykM4EcAs8U4SB+ziJkVBzAlJFKnYCWQOYRW7Xw6fdPoibpf62tPd32XNC\njoRLchSVhmU3bl0dpMcmpFg4M099+N5wnPcqow1TDABA2SiJKyn2TXaXBmJz\n9zvrwQtfzo9gjqOjoWnIPZh3Ai9vEmJ+9LbKkGgieihnUrQzyRY="
-    - secure: "V0e7tHG3XZnApgMmW/WGFYcHYFHCA5aD3kQxY41oxvFixpCx3aN+/8Kyw1Wf\nclZ+C9Myxn1rkaTrI39ZJBPB+UFrANJI1tg5uhLNnykHpUWielwWkNoh1OQx\nAwCCjZdzYdueMf+GCPi/kh5dGHANCp+eLlgf33X0IQGdcNpj4BQ="
+addons:
+  sauce_connect:
+    username: "henrikhodne"
+    access_key:
+      secure: "DROnN91K1QZPCw35H63mISddzGfD3Lm4c4m1p3ZHtbqSuqONQYYMIX/4vu0e\ngP+SYdz1MkA5Lkf3DYMqf/ZjPjq3iWlh3rYgyuQMYE5RB9Nuy6jpPHg1SXW5\nfs1OHl2aSGYNtO/upPqSHu1TJ43qXMxhQJ1OeymfJKS16HvCQNM="
 
 install:
   - pip install selenium nose --use-mirrors
 
 before_script:
   - curl https://gist.github.com/santiycr/5139581/raw/python_appengine_setup.py | python
-  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
 
 script:
   - python cssify.py -t
